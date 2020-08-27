@@ -12,8 +12,7 @@ node {
   stage ("Docker: Build") {
     docker.withRegistry(dockerRegistry, registryCredential) {
       image = docker.build(
-              "${dockerRegistry}/${name}:${version}",
-              "."
+              "${name}:${version}",
               //"-f ./Dockerfiles/i2_web.Dockerfile ./Dockerfiles"
       )
     }
