@@ -1,7 +1,7 @@
 node('master') {
   def version = "jenikins"
   def name = "pluhin31/test_sa"
-  def dockerRegistry = "https://docker.io"
+//  def dockerRegistry = "https://docker.io"
   def registryCredential = "dockerhub"
   def image
 
@@ -19,7 +19,7 @@ node('master') {
   stage ("Docker: Push") {
         docker.withRegistry(dockerRegistry, registryCredential) {
           image.push "${version}"
-          echo "Docker Image pushed: ${dockerRegistry}/${name}:${version}"
+          echo "Docker Image pushed: ${name}:${version}"
         }
   }
 }
