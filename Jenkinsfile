@@ -10,16 +10,16 @@ node('master') {
   }
 
   stage ("Docker: Build") {
-    docker.withRegistry(dockerRegistry, registryCredential) {
       image = docker.build(
               "${name}:${version}",
               //"-f ./Dockerfiles/i2_web.Dockerfile ./Dockerfiles"
       )
-    }
   }
 
   stage ("Docker: Push") {
-    image.push "${version}"
-    echo "Docker Image pushed: ${dockerRegistry}/${name}:${version}"
+        docker.withRegistry(dockerRegistry, registryCredential) {
+          image.push "${version}"
+          echo "Docker Image pushed: ${dockerRegistry}/${name}:${version}"
+        }
   }
 }
