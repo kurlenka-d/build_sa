@@ -1,4 +1,4 @@
-node {
+node('master') {
   def version = "jenikins"
   def name = "pluhin31/test_sa"
   def dockerRegistry = "https://docker.io"
