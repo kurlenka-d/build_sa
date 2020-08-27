@@ -1,7 +1,7 @@
 node {
   def version = "jenikins"
   def name = "pluhin31/test_sa"
-  def dockerRegistry = "docker.io"
+  def dockerRegistry = "https://docker.io"
   def registryCredential = "dockerhub"
   def image
 
