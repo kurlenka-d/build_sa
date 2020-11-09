@@ -12,8 +12,7 @@ node('master') {
   stage ("Docker: Build") {
       image = docker.build(
               "${name}:${version}",
-              "--network=host",
-              "."
+              "--network=host .",
               //"-f ./Dockerfiles/i2_web.Dockerfile ./Dockerfiles"
       )
   }
