@@ -18,7 +18,7 @@ node('master') {
   }
 
   stage ("Docker: Push") {
-        docker.withRegistry(dockerRegistry, registryCredential) {
+        docker.withRegistry('', registryCredential) {
           image.push "${version}"
           echo "Docker Image pushed: ${name}:${version}"
         }
