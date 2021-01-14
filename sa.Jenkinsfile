@@ -1,6 +1,6 @@
 node('master') {
   def version = "latest"
-  def name = "icingaweb2"
+  def name = "sa_build"
   def dockerRegistry = "jfrog.it-academy.by/public"
   def registryCredential = "jfrog-sa"
   def image
