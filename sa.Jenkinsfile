@@ -1,8 +1,8 @@
 node('master') {
-  def version = "latest"
-  def name = "sa_build"
+  def version = "test"
+  def name = "curl"
   def dockerRegistry = "jfrog.it-academy.by/public"
-  def registryCredential = "jfrog-sa"
+  def registryCredential = "jfrog-it"
   def image
 
   stage ("Checkout") {
@@ -17,7 +17,7 @@ node('master') {
   }
 
   stage ("Docker: Push") {
-        docker.withRegistry('https://jfrog.it-academy.by', registryCredential) {
+        docker.withRegistry('https://${dockerRegistry}', registryCredential) {
           image.push "${version}"
           echo "Docker Image pushed: ${dockerRegistry}/${name}:${version}"
         }
