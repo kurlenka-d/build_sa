@@ -1,8 +1,8 @@
 node('master') {
   def version = "test"
-  def name = "curl"
+  def name = "test_script"
   def dockerRegistry = "jfrog.it-academy.by/public"
-  def registryCredential = "jfrog-it"
+  def registryCredential = "jfrog-sa"
   def image
 
   stage ("Checkout") {
