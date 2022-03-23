@@ -1,8 +1,8 @@
-node('master') {
+node {
   def version = "test"
   def name = "test_script"
   def dockerRegistry = "jfrog.it-academy.by/public"
-  def registryCredential = "jfrog-sa"
+  def registryCredential = "sa"
   def image
 
   stage ("Checkout") {
@@ -12,7 +12,7 @@ node('master') {
   stage ("Docker: Build") {
       image = docker.build(
               "${dockerRegistry}/${name}:${version}",
-              "--network=host .",
+              ".",
       )
   }
 
