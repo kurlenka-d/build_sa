@@ -1,6 +1,6 @@
 node('master') {
   def version = "test"
-  def name = "test_script"
+  def name = "test_script2"
   def dockerRegistry = "jfrog.it-academy.by/public"
   def registryCredential = "sa"
   def image
