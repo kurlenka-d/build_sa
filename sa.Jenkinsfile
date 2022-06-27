@@ -1,4 +1,4 @@
-node {
+node('master') {
   def version = "test"
   def name = "test_script"
   def dockerRegistry = "jfrog.it-academy.by/public"
