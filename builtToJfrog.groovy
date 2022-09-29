@@ -2,7 +2,7 @@ node('master') {
   def version = "test"
   def name = "test_script2"
   def dockerRegistry = "jfrog.it-academy.by/public"
-  def registryCredential = "sa"
+  def registryCredential = "jfrog_sa"
   def image
 
   stage ("Checkout") {
