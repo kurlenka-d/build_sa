@@ -61,7 +61,7 @@ spec:
         - name: jenkins-config
           nfs:
             server: 192.168.37.105
-            path: /mnt/IT-Academy/nfs-data/sa2-22-22/spishchyk/jenkins
+            path: /mnt/IT-Academy/nfs-data/sa2-23-23/spishchyk/jenkins
 ---
 apiVersion: v1
 kind: ConfigMap
@@ -114,7 +114,7 @@ data:
         unclassified:
           location:
             adminAddress: "pluhin@gmail.com"
-            url: "http://jenkins.k8s-xx.sa/"
+            url: "http://jenkins.k8s-20.sa/"
           shell:
             shell: "/bin/bash"
 ---
@@ -141,7 +141,7 @@ metadata:
     kubernetes.io/ingress.class: nginx
 spec:
   rules:
-    - host: jenkins.k8s-18.sa
+    - host: jenkins.k8s-20.sa
       http:
         paths:
           - path: /
